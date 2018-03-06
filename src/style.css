@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Exo 2';
+  src: url('./assets/fonts/Exo2-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Exo 2';
+  margin: 50px 0;
+}
