@@ -21,26 +21,37 @@ module.exports = {
   module: {
     rules: [
       {
-	       test: /\.js$/,
-	       include: [
-	          path.resolve(__dirname, 'src')
-         ],
-         loader: 'babel-loader',
-         options: {
-           presets: ['env', 'react', 'stage-0']
-         }
+        test: /\.js$/,
+        include: [
+          path.resolve(__dirname, 'src')
+        ],
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            'env',
+            'react',
+            'stage-0'
+          ]
+        }
       },
       {
-         test: /\.css$/,
-         use: ['style-loader', 'css-loader']
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       },
       {
-         test: /\.ico$/,
-         use: ['file-loader?name=[name].[ext]']
+        test: /\.ico$/,
+        use: [
+          'file-loader?name=[name].[ext]'
+        ]
       },
       {
         test: /\.ttf$/,
-        use: ['url-loader?name=[name].[ext]']
+        use: [
+          'url-loader?name=[name].[ext]'
+        ]
       }
     ]
   },
@@ -53,4 +64,4 @@ module.exports = {
       constants$: path.resolve(__dirname, 'src/constants/index.js')
     }
   }
-}
+};

@@ -13,24 +13,24 @@ class PageError extends Component {
     status: PropTypes.number.isRequired
   };
 
+  handleClick = redirectHome => event => {
+    event.preventDefault();
+    redirectHome();
+  }
+
   render() {
     const { redirectHome, message, status } = this.props;
 
     return (
       <Fragment>
-        <h1 className = 'text-center'>{SERVER_MESSAGE_STATUS(message, status)}</h1>
+        <h1 className="text-center">{SERVER_MESSAGE_STATUS(message, status)}</h1>
         <Row>
-          <Col lg = {lgLayout} md = {mdLayout} sm = {smLayout} xs = {12}>
-            <Button block onClick = {this.handleClick(redirectHome)}>{BUTTON_HOME_PAGE}</Button>
+          <Col lg={lgLayout} md={mdLayout} sm={smLayout} xs={12}>
+            <Button block onClick={this.handleClick(redirectHome)}>{BUTTON_HOME_PAGE}</Button>
           </Col>
         </Row>
       </Fragment>
     );
-  }
-
-  handleClick = redirectHome => event => {
-    event.preventDefault();
-    redirectHome();
   }
 }
 

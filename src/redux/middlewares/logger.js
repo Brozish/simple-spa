@@ -1,4 +1,4 @@
-export default store => next => action => {
+export default () => next => action => {
   console.log(action);
   next(action);
 };
