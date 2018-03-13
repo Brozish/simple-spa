@@ -3,23 +3,23 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 import { Container } from 'reactstrap';
 
-import PageError from 'Components/router/PageError';
+import PrivateRoute from 'Components/router/PrivateRoute';
+import Sign from 'Components/Sign';
 import Home from 'Components/Home';
-import { PAGE_NOT_FOUND } from 'constants';
 import history from '../history';
 
 const App = () => (
   <ConnectedRouter history={history}>
     <Container>
       <Switch>
-        <Redirect exact from="/" to="/home" />
-        <Route exact path="/home" component={Home} />
-        <Route component={pageError} />
+        <PrivateRoute exact path="/" />
+        <PrivateRoute exact path="/home" component={Home} />
+        <Route exact path="/login" component={() => <Sign typeSign="signIn" />} />
+        <Route exact path="/register" component={() => <Sign typeSign="signUp" />} />
+        <Redirect to="/" />
       </Switch>
     </Container>
   </ConnectedRouter>
 );
-
-const pageError = () => <PageError message={PAGE_NOT_FOUND} status={404} />;
 
 export default App;

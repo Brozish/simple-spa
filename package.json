@@ -35,6 +35,7 @@
     "bootstrap": "^4.0.0-beta.3",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
+    "lodash": "^4.17.5",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
@@ -43,6 +44,8 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",
     "reactstrap": "^5.0.0-beta",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-form": "^7.3.0",
+    "redux-thunk": "^2.2.0"
   }
 }

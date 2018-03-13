@@ -29,6 +29,7 @@
     ],
     "no-shadow": 0,
     "no-console": 0,
+    "no-unreachable": 0,
   },
   "settings": {
     "import/resolver": {

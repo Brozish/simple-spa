@@ -1,1 +1,7 @@
 export const ABOUT = 'Simple SPA';
+
+export const SIGN_IN = 'SIGN_IN';
+export const SIGN_UP = 'SIGN_UP';
+export const SIGN_OUT = 'SIGN_OUT';
+
+export const REQUIRED = attribute => `The ${attribute} field is required.`;
