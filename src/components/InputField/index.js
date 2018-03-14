@@ -1,12 +1,12 @@
 import React from 'react';
-import { FormGroup, Label, Input, FormFeedback } from 'reactstrap';
+import { FormGroup, Label, Input } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 const InputField = ({
-  type, id, placeholder, touched, error, input
+  type, id, placeholder, touched, error, input, labelStatus
 }) => (
   <FormGroup>
-    <Label for={id}>Email</Label>
+    {getLabel(labelStatus, id, placeholder)}
     <Input
       type={type}
       {...input}
@@ -14,16 +14,18 @@ const InputField = ({
       placeholder={placeholder}
       invalid={!!(touched && error)}
     />
-    {touched && error && (
-      <FormFeedback>{error}</FormFeedback>
-    )}
   </FormGroup>
+);
+
+const getLabel = (labelStatus, id, placeholder) => (
+  labelStatus ? <Label for={id}>{placeholder}</Label> : null
 );
 
 InputField.propTypes = {
   type: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
+  labelStatus: PropTypes.bool,
   touched: PropTypes.bool,
   error: PropTypes.oneOfType([
     PropTypes.bool,
@@ -36,7 +38,8 @@ InputField.propTypes = {
 
 InputField.defaultProps = {
   touched: false,
-  error: false
+  error: false,
+  labelStatus: true
 };
 
 export default InputField;

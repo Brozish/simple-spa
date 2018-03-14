@@ -5,7 +5,6 @@ import { Form, Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
-import { REQUIRED } from 'constants';
 import InputField from 'Components/InputField';
 import { signIn, signUp } from 'Redux/ac/auth';
 import { startCase } from 'lodash';
@@ -65,13 +64,11 @@ class Sign extends Component {
           type="email"
           name="email"
           component={this.getInputField}
-          validate={[required]}
         />
         <Field
           type="password"
           name="password"
           component={this.getInputField}
-          validate={[required]}
         />
         <Button color="primary" disabled={submitting}>{startCase(typeSign)}</Button>
         {this.getSignUp(typeSign)}
@@ -79,14 +76,6 @@ class Sign extends Component {
     );
   }
 }
-
-const required = (value, allValues, props, name) => {
-  if (!value) {
-    return REQUIRED(name);
-  }
-
-  return null;
-};
 
 const propsInput = {
   email: {

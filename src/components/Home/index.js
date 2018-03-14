@@ -3,8 +3,8 @@ import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } f
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { ABOUT } from 'constants';
 import { signOut } from 'Redux/ac/auth';
+import InvoicesTable from 'Components/InvoicesTable';
 
 class Home extends Component {
   static propTypes = {
@@ -51,7 +51,7 @@ class Home extends Component {
             </Nav>
           </Collapse>
         </Navbar>
-        <h1 className="text-center">{ABOUT}</h1>
+        <InvoicesTable />
       </Fragment>
     );
   }

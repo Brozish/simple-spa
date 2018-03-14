@@ -61,6 +61,7 @@ module.exports = {
       Components: path.resolve(__dirname, 'src/components'),
       Redux: path.resolve(__dirname, 'src/redux'),
       Assets: path.resolve(__dirname, 'src/assets'),
+      Decorators: path.resolve(__dirname, 'src/decorators'),
       constants$: path.resolve(__dirname, 'src/constants/index.js')
     }
   }
